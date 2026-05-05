@@ -29,7 +29,13 @@ A simple and interactive To-Do List web application built using **HTML**, **CSS*
 │── script.js
 │── README.md
 
-----
+---
+
+## 📸 Preview
+
+![App Preview](images/To-Do-List.png)
+
+---
 
 ## 🌐 Live Demo
 
