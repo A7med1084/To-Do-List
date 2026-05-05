@@ -5,20 +5,27 @@ const box = document.querySelector(".box");
 const item = document.querySelector(".item");
 const addBtn = document.querySelector(".add-btn");
 
-box.innerHTML = "";
+item.remove();
 
 const addItems = function (e) {
   const copy = item.cloneNode(true);
   const text = copy.querySelector(".text");
   const removeBtn = copy.querySelector(".remove-btn");
   if (!(input.value === "")) {
+
     text.textContent = input.value;
     box.appendChild(copy);
-    input.value = "";
-    input.focus();
-    removeBtn.addEventListener("click", function () {
+
+    removeBtn.addEventListener("click", () => {
       copy.remove();
     });
+
+    text.addEventListener("click", () => {
+      text.classList.toggle("complete");
+    });
+
+    input.value = "";
+    input.focus();
   }
 };
 
@@ -27,4 +34,5 @@ document.addEventListener("keydown", (e) => {
     addItems();
   }
 });
+
 addBtn.addEventListener("click", addItems);
